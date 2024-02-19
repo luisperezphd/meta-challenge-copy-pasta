@@ -1,0 +1,44 @@
+{
+  "name": "meta-challenge-copy-paste-pasta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx concurrently npm:build:js npm:build:tailwind",
+    "watch": "npx concurrently npm:watch:js npm:watch:tailwind",
+    "build:js": "npx esbuild --bundle src/main.tsx --outfile=gen/main.js --sourcemap",
+    "watch:js": "npm run build:js -- --watch",
+    "build:tailwind": "npx tailwindcss -i src/main.css -o gen/main.css",
+    "watch:tailwind": "npm run build:tailwind -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@types/html2canvas": "^1.0.0",
+    "@types/jspdf": "^2.0.0",
+    "@types/react": "^18.2.55",
+    "@types/tesseract.js": "^2.0.0",
+    "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
+    "immer": "^10.0.3",
+    "jspdf": "^2.5.1",
+    "live-server": "^1.2.2",
+    "react": "^18.2.0",
+    "tesseract.js": "^5.0.4",
+    "usehooks-ts": "^2.14.0"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.19",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.20.0",
+    "http-server": "^14.1.1",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  }
+}
